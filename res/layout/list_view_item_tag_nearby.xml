@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:padding="10dp" >
+
+    <TextView
+        android:id="@+id/tx_poi_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@null"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tx_bizarea_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:text="@null"
+        android:textColor="@color/A0A0A0"
+        android:textSize="12sp" />
+
+</RelativeLayout>

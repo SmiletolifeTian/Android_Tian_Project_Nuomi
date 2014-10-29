@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EEEEEE"
+    android:orientation="vertical" >
+
+    <!-- 顶部开始 -->
+
+    <RelativeLayout
+        android:id="@+id/rl_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F8F8F8"
+        tools:ignore="UselessParent" >
+
+        <ImageView
+            android:id="@+id/img_ic_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/abc_ic_ab_back_holo_light"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/img_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_toRightOf="@+id/img_ic_back"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_launcher"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tx_title"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@+id/img_icon"
+            android:gravity="center"
+            android:text="当前城市-%s市"
+            android:textSize="22sp"
+            tools:ignore="HardcodedText" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:background="#F8F8F8"
+        android:padding="10dp" >
+
+        <EditText
+            android:id="@+id/et_city_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:hint="请输入城市中文名称或拼音"
+            tools:ignore="HardcodedText" />
+    </RelativeLayout>
+
+    <!-- 顶部结束 -->
+
+
+    <!-- 内容开始 -->
+
+    <ScrollView
+        android:id="@+id/sv_nearby_tuan"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:background="#EEEEEE"
+            android:orientation="vertical"
+            android:padding="10dp" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="定位城市"
+                    android:textSize="18sp"
+                    tools:ignore="HardcodedText" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.8dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="#D2D2D2" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_city_location_try"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="#FFFFFF"
+                android:text="定位失败,请点击重试"
+                android:textColor="#707070"
+                tools:ignore="HardcodedText" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="最近访问的城市"
+                    android:textSize="18sp"
+                    tools:ignore="HardcodedText" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.8dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="#D2D2D2" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_city_shenzhen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="#FFFFFF"
+                android:text="深圳市"
+                android:textColor="#707070"
+                tools:ignore="HardcodedText" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="热门城市"
+                    android:textSize="18sp"
+                    tools:ignore="HardcodedText" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.8dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="#D2D2D2" />
+            </LinearLayout>
+
+            <com.tianxinwei.project.nuomi.common.GridViewForScroll
+                android:id="@+id/gv_city_hot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:numColumns="3" />
+
+            <com.tianxinwei.project.nuomi.common.ListViewForScroll
+                android:id="@+id/lv_city_all"
+                android:layout_width="match_parent"
+                android:layout_height="100dp" />
+        </LinearLayout>
+    </ScrollView>
+    <!-- 内容结束 -->
+
+</LinearLayout>

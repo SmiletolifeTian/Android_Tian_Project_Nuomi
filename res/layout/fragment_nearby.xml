@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EEEEEE"
+    android:orientation="vertical" >
+
+    <!-- 顶部开始 -->
+
+    <RelativeLayout
+        android:id="@+id/rl_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F8F8F8"
+        tools:ignore="UselessParent" >
+
+        <ImageView
+            android:id="@+id/img_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/ic_launcher"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tx_title"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@+id/img_icon"
+            android:gravity="center"
+            android:text="附近"
+            android:textSize="22sp"
+            tools:ignore="HardcodedText" />
+
+        <ImageButton
+            android:id="@+id/btn_search"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentRight="true"
+            android:background="#00000000"
+            android:src="@drawable/icon_nav_sousuo_normal"
+            tools:ignore="ContentDescription" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:background="#F8F8F8" >
+
+        <TextView
+            android:id="@+id/tx_all_category"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:drawableRight="@drawable/icon_arrows_gray_down"
+            android:gravity="center"
+            android:text="全部分类 "
+            android:textSize="14sp"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/tx_3km"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/tx_all_category"
+            android:drawableRight="@drawable/icon_arrows_gray_down"
+            android:gravity="center"
+            android:text="3km "
+            android:textSize="14sp"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/tx_near"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/tx_3km"
+            android:drawableRight="@drawable/icon_arrows_gray_down"
+            android:gravity="center"
+            android:text="离我最近 "
+            android:textSize="14sp"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/tx_filter"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:drawableRight="@drawable/icon_arrows_gray_down"
+            android:gravity="center"
+            android:text="筛选  "
+            android:textSize="14sp"
+            tools:ignore="HardcodedText" />
+
+    </RelativeLayout>
+
+    <!-- 顶部结束 -->
+    
+    
+	<!-- 内容开始 -->
+    <ScrollView
+        android:id="@+id/sv_nearby_tuan"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <com.tianxinwei.project.nuomi.common.ListViewForScroll
+                android:id="@+id/lv_nearby_tuan"
+                android:layout_width="match_parent"
+                android:layout_height="100dp" />
+
+        <Button
+            android:id="@+id/btn_load_more"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="点击加载更多"
+            tools:ignore="HardcodedText" />
+
+        </LinearLayout>
+
+    </ScrollView>
+	<!-- 内容结束-->
+	
+</LinearLayout>

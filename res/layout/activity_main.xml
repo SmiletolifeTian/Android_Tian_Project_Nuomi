@@ -1,0 +1,73 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+    <FrameLayout android:id="@+id/fl_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/ll_footer"/>
+
+    <!-- 底部开始 -->
+
+    <LinearLayout
+        android:id="@+id/ll_footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#F8F8F8"
+        android:orientation="horizontal" 
+        android:padding="5dp">
+
+        <Button
+            android:id="@+id/btn_tuan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:drawableTop="@drawable/tab_ic_home_highlight"
+            android:text="团购"
+            android:textColor="#FF4978"
+            android:textSize="12sp"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/btn_fujin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:drawableTop="@drawable/tab_ic_nearby_normal"
+            android:text="附近"
+            android:textColor="#8B8B8B"
+            android:textSize="12sp"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/btn_mine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:drawableTop="@drawable/tab_ic_mine_normal"
+            android:text="我的"
+            android:textColor="#8B8B8B"
+            android:textSize="12sp"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/btn_genduo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:drawableTop="@drawable/tab_ic_more_normal"
+            android:text="更多"
+            android:textColor="#8B8B8B"
+            android:textSize="12sp"
+            tools:ignore="HardcodedText" />
+    </LinearLayout>
+    <!-- 底部结束 -->
+
+</RelativeLayout>

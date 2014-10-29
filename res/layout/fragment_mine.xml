@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EEEEEE"
+    android:orientation="vertical" >
+
+    <!-- 顶部开始 -->
+
+    <RelativeLayout
+        android:id="@+id/rl_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F8F8F8"
+        tools:ignore="UselessParent" >
+
+        <ImageView
+            android:id="@+id/img_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/ic_launcher"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tx_title"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@+id/img_icon"
+            android:gravity="center"
+            android:text="我的"
+            android:textSize="22sp"
+            tools:ignore="HardcodedText" />
+    </RelativeLayout>
+
+    <!-- 顶部结束 -->
+
+
+    <!-- 内容开始 -->
+
+    <ScrollView
+        android:id="@+id/sv_nearby_tuan"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:background="#93A8D5" >
+
+                <Button
+                    android:id="@+id/btn_longin"
+                    android:layout_width="120dp"
+                    android:layout_height="40dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="30dp"
+                    android:background="#FFFFFF"
+                    android:text="登录"
+                    android:textColor="#FF4E7C"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:id="@+id/tx_registry"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/btn_longin"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="15dp"
+                    android:text="注册账号  >"
+                    android:textColor="#F5F8FB"
+                    android:textSize="16sp"
+                    tools:ignore="HardcodedText" />
+            </RelativeLayout>
+
+            <com.tianxinwei.project.nuomi.common.GridViewForScroll
+                android:id="@+id/gv_quan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:numColumns="2" />
+
+            <com.tianxinwei.project.nuomi.common.ListViewForScroll
+                android:id="@+id/lv_mine"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="10dp" />
+        </LinearLayout>
+    </ScrollView>
+    <!-- 内容结束 -->
+
+</LinearLayout>

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <!-- 顶部开始 -->
+
+    <RelativeLayout
+        android:id="@+id/rl_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F8F8F8"
+        android:padding="2dp" >
+
+        <Button
+            android:id="@+id/btn_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="#00000000"
+            android:drawableRight="@drawable/home_ic_arrow_down"
+            android:text="深圳"
+            android:textColor="#FF4978"
+            android:textSize="16sp"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/btn_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/btn_sao"
+            android:layout_toRightOf="@+id/btn_city"
+            android:background="@drawable/city_search_bg"
+            android:gravity="center"
+            android:paddingLeft="20dp"
+            android:text="搜索商家、分类、地点 "
+            android:textColor="#CCCCCC"
+            tools:ignore="HardcodedText" />
+
+        <ImageView
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_alignLeft="@+id/btn_search"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/search"
+            tools:ignore="ContentDescription" />
+
+        <Button
+            android:id="@+id/btn_sao"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="#00000000"
+            android:drawableRight="@drawable/icon_nav_saoyisao_normal" />
+    </RelativeLayout>
+
+    <!-- 顶部结束 -->
+
+
+    <!-- 内容开始 -->
+
+    <com.tianxinwei.project.nuomi.common.ScrollBottomScrollView
+        android:id="@+id/sv_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rl_header" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#EEEEEE"
+            android:orientation="vertical" >
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp" >
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/vp_banner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" 
+                    android:layout_gravity="center_vertical"/>
+
+                <LinearLayout
+                    android:id="@+id/ll_container"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="80dp"
+                    android:gravity="right"
+                    android:orientation="horizontal" />
+            </FrameLayout>
+
+            <com.tianxinwei.project.nuomi.common.GridViewForScroll
+                android:id="@+id/gv_category"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#CCCCCC"
+                android:horizontalSpacing="1dp"
+                android:numColumns="4"
+                android:verticalSpacing="1dp"
+                tools:ignore="NestedScrolling" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginTop="5dp"
+                android:background="#FFFFFF" >
+
+                <ImageView
+                    android:id="@+id/img_spec1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/home_special1"
+                    tools:ignore="ContentDescription" />
+
+                <ImageView
+                    android:id="@+id/img_spec2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/home_special2"
+                    tools:ignore="ContentDescription" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_loading"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:visibility="gone" >
+
+                <ImageView
+                    android:id="@+id/img_loading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/tip_loading3" />
+
+                <TextView
+                    android:id="@+id/tx_loading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="正在加载中。。。" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_guess_like"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone" >
+
+                <RelativeLayout
+                    android:id="@+id/relative_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="#FFFFFF" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="猜你喜欢"
+                        android:textSize="18sp"
+                        tools:ignore="HardcodedText" />
+
+                    <Button
+                        android:id="@+id/btn_all_groupon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:background="#00000000"
+                        android:drawableRight="@drawable/home_ic_arrows_red_right"
+                        android:text="全部团购 "
+                        android:textColor="#FF4978"
+                        android:textSize="12sp"
+                        tools:ignore="HardcodedText" />
+                </RelativeLayout>
+
+                <com.tianxinwei.project.nuomi.common.ListViewForScroll
+                    android:id="@+id/lv_like"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:background="#FFFFFF"
+                    tools:ignore="NestedScrolling" />
+
+                <Button
+                    android:id="@+id/btn_footer_all_groupon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="#FFFFFF"
+                    android:gravity="center"
+                    android:text="查看全部团购"
+                    android:textColor="#FF4978"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
+        </LinearLayout>
+    </com.tianxinwei.project.nuomi.common.ScrollBottomScrollView>
+    <!-- 内容结束 -->
+
+</RelativeLayout>
